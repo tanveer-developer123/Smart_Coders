@@ -26,6 +26,7 @@ const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) =
 // Public Route component (redirect to dashboard if already logged in)
 const PublicRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { currentUser } = useAuth();
+  
   return !currentUser ? <>{children}</> : <Navigate to="/dashboard" />;
 };
 
